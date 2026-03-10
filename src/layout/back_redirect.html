@@ -1,0 +1,40 @@
+<!-- Script de Back Redirect Popup com Trackeamento UTMify -->
+<script>
+    const linkCheckout = 'https://pay.lowify.com.br/checkout.php?product_id=1U5jAp';
+
+    function setupBackRedirect(url) {
+        // Adiciona as UTMs da URL atual ao link de checkout
+        let urlFinal = url.trim() +
+            (url.indexOf('?') > 0 ? '&' : '?') +
+            document.location.search.replace('?', '').toString();
+
+        // Configura o histórico para interceptar o botão voltar
+        history.pushState({}, '', location.href);
+        history.pushState({}, '', location.href);
+
+        window.addEventListener('popstate', () => {
+            // Em vez de redirecionar direto, mostra o pop-up
+            const popup = document.getElementById('exitPopup');
+            if (popup) {
+                popup.classList.add('show');
+                // Atualiza o link do botão do pop-up com as UTMs
+                const btn = document.getElementById('popupBtn');
+                if (btn) btn.href = urlFinal;
+            }
+            // Garante que o usuário permaneça na página para ver o pop-up
+            history.pushState({}, '', location.href);
+        });
+    }
+
+    // Função para fechar o pop-up
+    window.closeExitPopup = function (e) {
+        if (e) e.preventDefault();
+        document.getElementById('exitPopup').classList.remove('show');
+    };
+
+    // Inicializa a lógica
+    setupBackRedirect(linkCheckout);
+</script>
+</head>
+
+<body>

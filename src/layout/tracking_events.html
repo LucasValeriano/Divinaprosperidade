@@ -1,0 +1,25 @@
+<!-- VTurb API Listener to trigger Facebook Pixel InitiateCheckout -->
+<script>
+    // Target specific timestamp: 20 minutes (1200 seconds)
+    const TARGET_TIME = 1200;
+    let eventFired = false;
+
+    window.addEventListener('message', function (event) {
+        // Ensure message structure matches VTurb's API
+        if (event.data && event.data.action === "timeupdate" && typeof event.data.time !== "undefined") {
+            const currentTime = parseFloat(event.data.time);
+
+            if (currentTime >= TARGET_TIME && !eventFired) {
+                eventFired = true;
+
+                // Fire the Facebook Pixel InitiateCheckout event
+                if (typeof fbq !== 'undefined') {
+                    fbq('track', 'InitiateCheckout');
+                    console.log('FB Pixel: InitiateCheckout fired at ' + TARGET_TIME + ' seconds.');
+                } else {
+                    console.warn('FB Pixel fbq is not defined. Cannot fire InitiateCheckout.');
+                }
+            }
+        }
+    });
+</script>
