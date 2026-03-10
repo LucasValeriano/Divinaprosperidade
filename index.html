@@ -137,6 +137,105 @@
                 padding: 1rem;
             }
         }
+
+        /* Estilos do Pop-up de Saída */
+        .exit-popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(5px);
+            z-index: 9999;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .exit-popup-overlay.show {
+            display: flex;
+            opacity: 1;
+        }
+
+        .exit-popup-content {
+            background: #0d0d0d;
+            border: 2px solid var(--primary-color);
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(212, 175, 55, 0.2);
+            position: relative;
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+
+        .exit-popup-overlay.show .exit-popup-content {
+            transform: scale(1);
+        }
+
+        .exit-popup-title {
+            color: #fff;
+            font-size: 1.8rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .exit-popup-title span {
+            color: #e74c3c;
+        }
+
+        .exit-popup-text {
+            color: #ccc;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.5;
+        }
+
+        .exit-popup-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: #fff;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 50px;
+            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
+            transition: all 0.3s ease;
+            width: 100%;
+            box-sizing: border-box;
+            letter-spacing: 1px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .exit-popup-btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(231, 76, 60, 0.6);
+        }
+
+        .exit-popup-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            color: #666;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: color 0.3s;
+            text-decoration: none;
+        }
+
+        .exit-popup-close:hover {
+            color: #fff;
+        }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
     <!-- Meta Pixel Code -->
@@ -163,33 +262,55 @@
 
     <!-- Script de Back Redirect Popup com Trackeamento UTMify -->
     <script>
-        // ALTERE O LINK PARA A PÁGINA QUE QUISER MOSTRAR QUANDO O USUÁRIO TENTAR SAIR
-        const link = 'https://pay.lowify.com.br/checkout.php?product_id=1U5jAp';
+        const linkCheckout = 'https://pay.lowify.com.br/checkout.php?product_id=1U5jAp';
 
-        function setBackRedirect(url) {
-            let urlBackRedirect = url;
-            urlBackRedirect = urlBackRedirect =
-                urlBackRedirect.trim() +
-                (urlBackRedirect.indexOf('?') > 0 ? '&' : '?') +
+        function setupBackRedirect(url) {
+            // Adiciona as UTMs da URL atual ao link de checkout
+            let urlFinal = url.trim() +
+                (url.indexOf('?') > 0 ? '&' : '?') +
                 document.location.search.replace('?', '').toString();
 
-            history.pushState({}, '', location.href);
+            // Configura o histórico para interceptar o botão voltar
             history.pushState({}, '', location.href);
             history.pushState({}, '', location.href);
 
             window.addEventListener('popstate', () => {
-                console.log('onpopstate', urlBackRedirect);
-                setTimeout(() => {
-                    location.href = urlBackRedirect;
-                }, 1);
+                // Em vez de redirecionar direto, mostra o pop-up
+                const popup = document.getElementById('exitPopup');
+                if (popup) {
+                    popup.classList.add('show');
+                    // Atualiza o link do botão do pop-up com as UTMs
+                    const btn = document.getElementById('popupBtn');
+                    if (btn) btn.href = urlFinal;
+                }
+                // Garante que o usuário permaneça na página para ver o pop-up
+                history.pushState({}, '', location.href);
             });
         }
 
-        setBackRedirect(link);
+        // Função para fechar o pop-up
+        window.closeExitPopup = function (e) {
+            if (e) e.preventDefault();
+            document.getElementById('exitPopup').classList.remove('show');
+        };
+
+        // Inicializa a lógica
+        setupBackRedirect(linkCheckout);
     </script>
 </head>
 
 <body>
+    <!-- Exit Intent Popup -->
+    <div id="exitPopup" class="exit-popup-overlay">
+        <div class="exit-popup-content">
+            <a href="#" class="exit-popup-close" onclick="closeExitPopup(event)">&times;</a>
+            <h2 class="exit-popup-title">ESPERE! <span>NÃO SAIA AINDA!</span></h2>
+            <p class="exit-popup-text">Você acaba de ganhar <strong>50% DE DESCONTO</strong> para garantir o seu acesso
+                agora mesmo. Essa é sua última chance!</p>
+            <a href="#" id="popupBtn" class="exit-popup-btn">QUERO MEU DESCONTO AGORA</a>
+        </div>
+    </div>
+
     <div class="container">
         <header>
             <h1>O Segredo Revelado</h1>
