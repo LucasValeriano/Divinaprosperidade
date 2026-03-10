@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESPERE! Condição Especial</title>
+    <style>
+        :root {
+            --primary-color: #d4af37;
+            /* Gold accent */
+            --bg-color: #050505;
+            --text-color: #f5f5f5;
+            --discount-color: #e74c3c;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-image:
+                radial-gradient(circle at 50% 0%, rgba(231, 76, 60, 0.15), transparent 50%),
+                radial-gradient(circle at 50% 100%, rgba(212, 175, 55, 0.05), transparent 50%);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        header {
+            margin-bottom: 2rem;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .alert-badge {
+            display: inline-block;
+            background: rgba(231, 76, 60, 0.1);
+            color: var(--discount-color);
+            border: 1px solid rgba(231, 76, 60, 0.3);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            animation: pulse 2s infinite;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #fff, var(--discount-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: #ddd;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        .subtitle strong {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+
+        .video-wrapper {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            border-radius: 16px;
+            padding: 1rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 30px rgba(231, 76, 60, 0.1);
+            backdrop-filter: blur(10px);
+            margin: 0 auto;
+            position: relative;
+            animation: fadeIn 1.5s ease-out;
+            max-width: 600px;
+        }
+
+        .vturb-container {
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        footer {
+            margin-top: 3rem;
+            font-size: 0.8rem;
+            color: #555;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(231, 76, 60, 0.4);
+            }
+
+            70% {
+                box-shadow: 0 0 0 10px rgba(231, 76, 60, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(231, 76, 60, 0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.6rem;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <!-- Meta Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '26069232519364368');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=26069232519364368&ev=PageView&noscript=1" /></noscript>
+    <!-- End Meta Pixel Code -->
+    <script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck
+        data-utmify-prevent-subids async defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="alert-badge">NÃO FECHE ESTA PÁGINA AINDA</div>
+            <h1>VOCÊ ACABA DE GANHAR 50% DE DESCONTO!</h1>
+            <p class="subtitle">
+                Essa é a sua <strong>última chance</strong> de garantir acesso pelo <strong>metade do
+                    preço</strong>.<br>
+                Assista ao vídeo abaixo e garanta essa condição exclusiva agora.
+            </p>
+        </header>
+
+        <div class="video-wrapper">
+            <div class="vturb-container">
+                <!-- VTURB EMBED CODE START -->
+                <vturb-smartplayer id="vid-69abad8ba584f1a405fb6629"
+                    style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"></vturb-smartplayer>
+                <script
+                    type="text/javascript"> var s = document.createElement("script"); s.src = "https://scripts.converteai.net/9c10e7d2-9dcb-4433-995d-9eceac2bdf37/players/69abad8ba584f1a405fb6629/v4/player.js", s.async = !0, document.head.appendChild(s); </script>
+                <!-- VTURB EMBED CODE END -->
+            </div>
+        </div>
+
+        <!-- VTurb API Listener to trigger Facebook Pixel InitiateCheckout -->
+        <script>
+            // Target specific timestamp: 20 minutes (1200 seconds)
+            const TARGET_TIME = 1200;
+            let eventFired = false;
+
+            window.addEventListener('message', function (event) {
+                // Ensure message structure matches VTurb's API
+                if (event.data && event.data.action === "timeupdate" && typeof event.data.time !== "undefined") {
+                    const currentTime = parseFloat(event.data.time);
+
+                    if (currentTime >= TARGET_TIME && !eventFired) {
+                        eventFired = true;
+
+                        // Fire the Facebook Pixel InitiateCheckout event
+                        if (typeof fbq !== 'undefined') {
+                            fbq('track', 'InitiateCheckout', { value: '0.00', currency: 'BRL', contents: 'Downsell 50%' });
+                            console.log('FB Pixel: InitiateCheckout fired at ' + TARGET_TIME + ' seconds.');
+                        } else {
+                            console.warn('FB Pixel fbq is not defined. Cannot fire InitiateCheckout.');
+                        }
+                    }
+                }
+            });
+        </script>
+
+        <footer>
+            <p>&copy; 2026 Prosperidade Divina. Todos os direitos reservados.</p>
+        </footer>
+    </div>
+</body>
+
+</html>

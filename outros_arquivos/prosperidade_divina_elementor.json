@@ -1,0 +1,64 @@
+{
+    "version": "0.4",
+    "title": "Prosperidade Divina",
+    "type": "page",
+    "content": [
+        {
+            "id": "abc1234",
+            "settings": {
+                "content_width": "full",
+                "padding": {
+                    "unit": "px",
+                    "top": "0",
+                    "right": "0",
+                    "bottom": "0",
+                    "left": "0",
+                    "isLinked": true
+                },
+                "margin": {
+                    "unit": "px",
+                    "top": "0",
+                    "right": "0",
+                    "bottom": "0",
+                    "left": "0",
+                    "isLinked": true
+                }
+            },
+            "elements": [
+                {
+                    "id": "def5678",
+                    "settings": {
+                        "_column_size": 100,
+                        "padding": {
+                            "unit": "px",
+                            "top": "0",
+                            "right": "0",
+                            "bottom": "0",
+                            "left": "0",
+                            "isLinked": true
+                        }
+                    },
+                    "elements": [
+                        {
+                            "id": "ghi9012",
+                            "settings": {
+                                "html": "<style>\n    .elementor-page-wrapper-custom {\n        --primary-color: #d4af37;\n        --bg-color: #050505;\n        --text-color: #f5f5f5;\n        background-color: var(--bg-color);\n        color: var(--text-color);\n        min-height: 100vh;\n        display: flex;\n        flex-direction: column;\n        align-items: center;\n        justify-content: center;\n        background-image:\n            radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.15), transparent 50%),\n            radial-gradient(circle at 50% 100%, rgba(212, 175, 55, 0.05), transparent 50%);\n        width: 100%;\n        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;\n    }\n\n    .elementor-page-wrapper-custom * {\n        margin: 0;\n        padding: 0;\n        box-sizing: border-box;\n        font-family: inherit;\n    }\n\n    .pd-container {\n        width: 100%;\n        max-width: 800px;\n        padding: 2rem;\n        text-align: center;\n        margin: 0 auto;\n    }\n\n    .pd-container header {\n        margin-bottom: 2rem;\n        animation: fadeInDown 1s ease-out;\n    }\n\n    .pd-container h1 {\n        font-size: 2.2rem;\n        font-weight: 700;\n        margin-bottom: 0.5rem;\n        background: linear-gradient(135deg, #fff, var(--primary-color));\n        -webkit-background-clip: text;\n        background-clip: text;\n        -webkit-text-fill-color: transparent;\n        text-transform: uppercase;\n        letter-spacing: 1.5px;\n        line-height: 1.2;\n    }\n\n    .pd-container .subtitle {\n        font-size: 1rem;\n        color: #999;\n        font-weight: 300;\n        line-height: 1.5;\n    }\n\n    .pd-container .video-wrapper {\n        background: rgba(255, 255, 255, 0.02);\n        border: 1px solid rgba(212, 175, 55, 0.15);\n        border-radius: 16px;\n        padding: 1rem;\n        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 30px rgba(212, 175, 55, 0.05);\n        backdrop-filter: blur(10px);\n        margin: 0 auto;\n        position: relative;\n        animation: fadeIn 1.5s ease-out;\n        max-width: 600px;\n    }\n\n    .pd-container .vturb-container {\n        border-radius: 8px;\n        overflow: hidden;\n        background-color: #000;\n        display: flex;\n        justify-content: center;\n        align-items: center;\n    }\n\n    .pd-container footer {\n        margin-top: 3rem;\n        font-size: 0.8rem;\n        color: #555;\n        animation: fadeInUp 1s ease-out;\n    }\n\n    @keyframes fadeIn {\n        from { opacity: 0; transform: scale(0.95); }\n        to { opacity: 1; transform: scale(1); }\n    }\n\n    @keyframes fadeInDown {\n        from { opacity: 0; transform: translateY(-20px); }\n        to { opacity: 1; transform: translateY(0); }\n    }\n\n    @keyframes fadeInUp {\n        from { opacity: 0; transform: translateY(20px); }\n        to { opacity: 1; transform: translateY(0); }\n    }\n\n    @media (max-width: 768px) {\n        .pd-container h1 { font-size: 1.6rem; }\n        .pd-container { padding: 1rem; }\n    }\n</style>\n<link href=\"https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap\" rel=\"stylesheet\">\n\n<!-- Meta Pixel Code -->\n<script>\n    !function (f, b, e, v, n, t, s) {\n        if (f.fbq) return; n = f.fbq = function () {\n            n.callMethod ?\n                n.callMethod.apply(n, arguments) : n.queue.push(arguments)\n        };\n        if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';\n        n.queue = []; t = b.createElement(e); t.async = !0;\n        t.src = v; s = b.getElementsByTagName(e)[0];\n        s.parentNode.insertBefore(t, s)\n    }(window, document, 'script',\n        'https://connect.facebook.net/en_US/fbevents.js');\n    fbq('init', '26069232519364368');\n    fbq('track', 'PageView');\n    fbq('track', 'InitiateCheckout');\n</script>\n<noscript><img height=\"1\" width=\"1\" style=\"display:none\"\n        src=\"https://www.facebook.com/tr?id=26069232519364368&ev=PageView&noscript=1\" /></noscript>\n<!-- End Meta Pixel Code -->\n\n<script src=\"https://cdn.utmify.com.br/scripts/utms/latest.js\" data-utmify-prevent-xcod-sck\n    data-utmify-prevent-subids async defer></script>\n\n<div class=\"elementor-page-wrapper-custom\">\n    <div class=\"pd-container\">\n        <header>\n            <h1>O Segredo Revelado</h1>\n            <p class=\"subtitle\">Assista ao v\u00eddeo abaixo com aten\u00e7\u00e3o, este conte\u00fado pode sair do ar a qualquer momento.</p>\n        </header>\n\n        <div class=\"video-wrapper\">\n            <div class=\"vturb-container\">\n                <!-- VTURB EMBED CODE START -->\n                <vturb-smartplayer id=\"vid-69abad8ba584f1a405fb6629\" style=\"display: block; margin: 0 auto; width: 100%; max-width: 400px;\"></vturb-smartplayer>\n                <script type=\"text/javascript\">\n                    var s = document.createElement(\"script\");\n                    s.src = \"https://scripts.converteai.net/9c10e7d2-9dcb-4433-995d-9eceac2bdf37/players/69abad8ba584f1a405fb6629/v4/player.js\",\n                        s.async = !0, document.head.appendChild(s);\n                </script>\n                <!-- VTURB EMBED CODE END -->\n            </div>\n        </div>\n\n        <footer>\n            <p>&copy; 2026 Prosperidade Divina. Todos os direitos reservados.</p>\n        </footer>\n    </div>\n</div>"
+                            },
+                            "elements": [],
+                            "isInner": false,
+                            "widgetType": "html",
+                            "elType": "widget"
+                        }
+                    ],
+                    "isInner": false,
+                    "elType": "column"
+                }
+            ],
+            "isInner": false,
+            "elType": "section"
+        }
+    ],
+    "page_settings": {
+        "template": "elementor_canvas"
+    }
+}
