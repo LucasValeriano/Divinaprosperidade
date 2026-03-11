@@ -1,2 +1,10 @@
-videos/VSL.mp4
-/outros_arquivos/Videos/VSL.mp4
+*.mp4
+*.wav
+*.mp3
+*.pdf
+/outros_arquivos/
+/Conteudo/
+/videos/
+/audios/
+/imagens/
+*.json
