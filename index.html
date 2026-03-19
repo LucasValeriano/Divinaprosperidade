@@ -291,8 +291,10 @@ src="https://www.facebook.com/tr?id=26069232519364368&ev=PageView&noscript=1"
         document.getElementById('exitPopup').classList.remove('show');
     };
 
-    // Inicializa a lógica
-    setupBackRedirect(linkCheckout);
+    // Inicializa a lógica somente após o DOM estar completamente carregado
+    document.addEventListener('DOMContentLoaded', function () {
+        setupBackRedirect(linkCheckout);
+    });
 </script>
 </head>
 
